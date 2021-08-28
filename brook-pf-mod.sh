@@ -127,9 +127,9 @@ Download_brook(){
     [[ ! -e ${file} ]] && mkdir ${file}
     cd ${file}
     if [[ ${bit} == "x86_64" ]]; then
-        wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook"
+        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20210701/brook"
     else
-        wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook_linux_386"
+        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20210701/brook_linux_386"
         mv brook_linux_386 brook
     fi
     [[ ! -e "brook" ]] && echo -e "${Error} Brook 下载失败 !" && exit 1
@@ -144,7 +144,7 @@ Service_brook(){
         chkconfig --add brook-pf
         chkconfig brook-pf on
     else
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/monret/brook/master/brook-pf_debian -O /etc/init.d/brook-pf; then
+        if ! wget --no-check-certificate https://cdn.jsdelivr.net/gh/monret/brook@master/brook-pf_debian -O /etc/init.d/brook-pf; then
             echo -e "${Error} Brook服务 管理脚本下载失败 !" && exit 1
         fi
         chmod +x /etc/init.d/brook-pf
