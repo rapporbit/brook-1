@@ -127,9 +127,9 @@ Download_brook(){
     [[ ! -e ${file} ]] && mkdir ${file}
     cd ${file}
     if [[ ${bit} == "x86_64" ]]; then
-        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20210701/brook"
+        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20200801/brook"
     else
-        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20210701/brook_linux_386"
+        wget --no-check-certificate -N "https://cdn.jsdelivr.net/gh/txthinking/brook@releases/download/v20200801/brook_linux_386"
         mv brook_linux_386 brook
     fi
     [[ ! -e "brook" ]] && echo -e "${Error} Brook 下载失败 !" && exit 1
